@@ -1,12 +1,11 @@
 % Create an instance of the CustomGridWorld environment
 env = HillClimber();
-% Reset the environment to the initial state
-initialObservation = env.reset()
-numEpisodes = 1;  % user defined
-numSteps = 10000;     % user defined
+
+numEpisodes = 3;  % user defined
+numSteps = 1000;     % user defined
 
 
-
+%%
 R0 = env.Rewards;
 
 for episode = 1:numEpisodes
@@ -60,7 +59,7 @@ opt = rlTrainingOptions(...
     MaxEpisodes=1000,...
     MaxStepsPerEpisode=1000,...
     StopTrainingCriteria="AverageReward",...
-    StopTrainingValue=5000, ...
+    StopTrainingValue=100, ...
     Verbose=true,...
     Plots="none");
 

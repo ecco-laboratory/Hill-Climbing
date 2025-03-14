@@ -79,11 +79,11 @@ classdef HillClimber < rl.env.MATLABEnvironment
             Observation = this.CurrentState';
             if ~skip
                 if isequal(this.CurrentState, this.TerminalState)
-                    Reward = 10 + this.Rewards(this.CurrentState(1),this.CurrentState(2)) + energy -.1;
+                    Reward = 10 + 10*this.Rewards(this.CurrentState(1),this.CurrentState(2)) + energy -.1;
                     this.Rewards(this.CurrentState(1),this.CurrentState(2)) = this.Rewards(this.CurrentState(1),this.CurrentState(2))/2;
                     IsDone = true;
                 else
-                    Reward = 10 + this.Rewards(this.CurrentState(1),this.CurrentState(2)) + energy -.1;
+                    Reward =  10*this.Rewards(this.CurrentState(1),this.CurrentState(2)) + energy -.1;
                     this.Rewards(this.CurrentState(1),this.CurrentState(2)) = this.Rewards(this.CurrentState(1),this.CurrentState(2))/2;
                     IsDone = false;
                 end
